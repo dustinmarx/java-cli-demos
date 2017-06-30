@@ -41,16 +41,12 @@ public class Main
 
    public static void main(final String[] arguments)
    {
-      final Main_Parser parser = new Main_Parser();
       if (arguments.length < 1)
       {
-         for (final Main_Parser.Option option : Main_Parser.Option.values())
-         {
-            out.println(option.describe(3));
-         }
+         Main_Parser.printUsage(out, 3);
          System.exit(-1);
       }
-      final Main_Parser.Binder binder = parser.parse(arguments);
+      final Main_Parser.Binder binder = Main_Parser.parse(arguments);
       final Main main = binder.bind();
       out.println("The file '" + main.getFile() + "' was provided and verbosity is set to '" + main.isVerbose() + "'.");
    }
