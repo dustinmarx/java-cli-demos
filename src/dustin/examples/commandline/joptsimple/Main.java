@@ -1,12 +1,12 @@
 package examples.dustin.commandline.joptsimple;
 
 import static java.lang.System.out;
+import static java.util.Arrays.asList;
 
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 /**
  * Demonstrate command-line processes in Java with JOpt Simple.
