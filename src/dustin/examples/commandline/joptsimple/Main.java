@@ -20,12 +20,9 @@ public class Main
    public static void main(final String[] arguments)
    {
       final OptionParser optionParser = new OptionParser();
-      final String[] fileOptions = {"f", "file"};
-      optionParser.acceptsAll(Arrays.asList(fileOptions), "Path and name of file.").withRequiredArg().required();
-      final String[] verboseOptions = {"v", "verbose"};
-      optionParser.acceptsAll(Arrays.asList(verboseOptions), "Verbose logging.");
-      final String[] helpOptions = {"h", "help"};
-      optionParser.acceptsAll(Arrays.asList(helpOptions), "Display help/usage information").forHelp();
+      optionParser.acceptsAll(asList("f", "file"), "Path and name of file.").withRequiredArg().required();
+      optionParser.acceptsAll(asList("v", "verbose"), "Verbose logging.");
+      optionParser.acceptsAll(asList("h", "help"), "Display help/usage information").forHelp();
       final OptionSet options = optionParser.parse(arguments);
       if (options.has("help"))
       {
