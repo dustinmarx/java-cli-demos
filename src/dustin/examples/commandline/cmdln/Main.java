@@ -27,14 +27,14 @@ public class Main
                   .setDescription("Enable verbosity")
             });
 
-      if(cmdLn.getResult('h') != null)
+      if(cmdLn.present('h'))
       {
          cmdLn.printHelp();
          System.exit(0);
       }
 
       String fileName = null;
-      if(cmdLn.getResult('f') != null)
+      if(cmdLn.present('f'))
       {
          fileName = cmdLn.getResult('f').getArgument();
       }
@@ -45,7 +45,7 @@ public class Main
       }
 
       boolean verbose = false;
-      if (cmdLn.getResult('v') != null)
+      if (cmdLn.present('v'))
       {
          verbose = true;
       }
