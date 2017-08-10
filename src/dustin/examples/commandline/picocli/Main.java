@@ -11,7 +11,7 @@ import picocli.CommandLine.Option;
  */
 @Command(
    name="Main",
-   description="@|bold Demonstrating picocli @|",
+   description="@|bold Demonstrating picocli |@",
    headerHeading="@|bold,underline Demonstration Usage|@:%n%n")
 public class Main
 {
