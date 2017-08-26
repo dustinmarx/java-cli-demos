@@ -30,7 +30,6 @@ public class Main
       {
          out.println(parseEx.getMessage());
          out.println(CLAJR.getHelp());
-
       }
       catch (Throwable throwable)  // CLAJR.parse throws Throwable
       {
@@ -76,10 +75,5 @@ public class Main
       {
          return file;
       }
-/*
-      public void _(final String string)
-      {
-         out.println("Extra stuff provided: '" + string + "'.");
-      }*/
    }
 }
