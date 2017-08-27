@@ -3,8 +3,11 @@ package examples.dustin.commandline.jargs;
 import static java.lang.System.out;
 
 import jargs.gnu.CmdLineParser;
-
-import java.util.Locale;
+import jargs.gnu.CmdLineParser.Option;
+import jargs.gnu.CmdLineParser.Option.BooleanOption;
+import jargs.gnu.CmdLineParser.IllegalOptionValueException;
+import jargs.gnu.CmdLineParser.Option.StringOption;
+import jargs.gnu.CmdLineParser.UnknownOptionException;
 
 /**
  * Demonstrate parsing command line arguments in Java with JArgs.
@@ -14,9 +17,9 @@ public class Main
    public static void main(final String[] arguments)
    {
       final CmdLineParser cmdLineParser = new CmdLineParser();
-      final CmdLineParser.Option fileOption = new CmdLineParser.Option.StringOption('f', "file");
+      final Option fileOption = new StringOption('f', "file");
       cmdLineParser.addOption(fileOption);
-      final CmdLineParser.Option verbosityOption = new CmdLineParser.Option.BooleanOption('v', "verbose");
+      final Option verbosityOption = new BooleanOption('v', "verbose");
       cmdLineParser.addOption(verbosityOption);
       try
       {
@@ -32,7 +35,7 @@ public class Main
             + " and verbosity is " + cmdLineParser.getOptionValue(verbosityOption, false)
             + ".");
       }
-      catch (CmdLineParser.IllegalOptionValueException | CmdLineParser.UnknownOptionException exception)
+      catch (IllegalOptionValueException | UnknownOptionException exception)
       {
          out.println("Unable to parse command line options - " + exception);
          System.exit(-1);
