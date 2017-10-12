@@ -5,11 +5,6 @@ import static java.lang.System.out;
 import com.github.rvesse.airline.SingleCommand;
 import com.github.rvesse.airline.annotations.Command;
 import com.github.rvesse.airline.annotations.Option;
-//import com.github.rvesse.airline.help.cli.CliCommandUsageGenerator;
-//import com.github.rvesse.airline.model.CommandMetadata;
-//import com.github.rvesse.airline.parser.ParseResult;
-
-//import java.io.IOException;
 
 /**
  * Demonstrate parsing command-line arguments from Java
@@ -27,15 +22,6 @@ public class Main
    public static void main(final String[] arguments)
    {
       final SingleCommand<Main> parser = SingleCommand.singleCommand(Main.class);
-      /*
-      // Seeing error message when trying to compile this:
-      // "class file for com.github.rvesse.airline.io.printers.UsagePrinter not found"
-      if (arguments.length < 1)
-      {
-         final CommandMetadata commandMetadata = parser.getCommandMetadata();
-         CliCommandUsageGenerator usageGenerator = new CliCommandUsageGenerator();
-         usageGenerator.usage("Main", new String[0],"Main", commandMetadata, null, out);
-      }*/
       final Main main = parser.parse(arguments);
       if (main.file != null)
       {
