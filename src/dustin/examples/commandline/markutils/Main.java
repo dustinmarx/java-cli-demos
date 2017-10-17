@@ -31,7 +31,17 @@ public class Main implements Callable<Integer>
    @Override
    public Integer call() throws Exception
    {
-      out.println("File path/name is '" + file + "' and verbosity is " + verbose);
-      return file != null ? 0 : -1;
+      int status;
+      if (file != null && !file.isEmpty())
+      {
+         status = 0;
+         out.println("File path/name is '" + file + "' and verbosity is " + verbose);
+      }
+      else
+      {
+         status = -1;
+         out.println("ERROR: Valid file name was not provided.");
+      }
+      return status;
    }
 }
