@@ -23,3 +23,5 @@ This is a collection of simple Java classes that demonstrate several Java-based 
 * Part 20: JSAP (http://marxsoftware.blogspot.com/2017/10/jsap.html)
 * Part 21: Airline 2 (http://marxsoftware.blogspot.com/2017/10/airline2.html)
 * Part 22: argparser (http://marxsoftware.blogspot.com/2017/10/argparser.html)
+* Part 23: Rop (http://marxsoftware.blogspot.com/2017/10/rop.html)
+* Part 24: MarkUtils-CLI (http://marxsoftware.blogspot.com/2017/10/markutils-cli.html)
