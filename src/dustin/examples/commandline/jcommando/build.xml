@@ -1,0 +1,19 @@
+<project name="JCommandoGeneration" default="generateSourceForJCommando" basedir=".">
+  <description>
+    Command-line Interfaces Implementations
+  </description>
+
+  <target name="generateSourceForJCommando"
+          description="Generate command line parsing source code that uses JCommando">
+    <taskdef name="jcommando" classname="org.jcommando.ant.JCommando">
+      <classpath>
+        <pathelement location="C:\lib\jcommando-1.2\lib\jcommando.jar"/>
+      </classpath>
+    </taskdef>
+
+    <jcommando inputfile="jcommando/options.xml"
+               classname="MainParser"
+               destdir="src"
+               packagename="examples.dustin.commandline.jcommando"/>
+  </target>
+</project>
