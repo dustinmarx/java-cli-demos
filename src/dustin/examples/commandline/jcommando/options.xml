@@ -1,0 +1,13 @@
+<jcommando>
+   <option id="file" long="file" short="f" type="String">
+      <description>Path and name of file</description>
+   </option>
+   <option id="verbose" long="verbose" short="v">
+      <description>Verbosity enabled</description>
+   </option>
+   <commandless id="execute" allow-optionless="true">
+      <or>
+         <option-ref id="file" />
+      </or>
+   </commandless>
+</jcommando>
