@@ -26,3 +26,4 @@ This is a collection of simple Java classes that demonstrate several Java-based 
 * __Part 23: Rop__ (http://marxsoftware.blogspot.com/2017/10/rop.html)
 * __Part 24: MarkUtils-CLI__ (http://marxsoftware.blogspot.com/2017/10/markutils-cli.html)
 * __Part 25: JCommando__ (http://marxsoftware.blogspot.com/2017/10/jcommando.html)
+* __Part 26: CmdOption__ (http://marxsoftware.blogspot.com/2017/10/cmdoption.html)
