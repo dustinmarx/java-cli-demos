@@ -28,3 +28,4 @@ This is a collection of simple Java classes that demonstrate several Java-based 
 * __Part 25: JCommando__ (http://marxsoftware.blogspot.com/2017/10/jcommando.html)
 * __Part 26: CmdOption__ (http://marxsoftware.blogspot.com/2017/10/cmdoption.html)
 * __Part 27: CLI Parser__ (http://marxsoftware.blogspot.com/2017/10/cli-parser.html)
+* __Part 28: getopt4j__ (http://marxsoftware.blogspot.com/2017/10/getopt4j.html)
