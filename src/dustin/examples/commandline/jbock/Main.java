@@ -19,14 +19,20 @@ public class Main
    private String file;
 
    @CommandLineArguments
-   public Main(
-      @ShortName('v') @LongName("verbose") @Description("Verbosity enabled?")
-      final boolean newVerbose,
-      @ShortName('f') @LongName("file") @Description("File name and path")
-      final Optional<String> newFileName)
+   abstract static class Arguments
    {
-      verbose = newVerbose;
-      file = newFileName.orElse("");
+
+      @ShortName('v') @LongName("verbose") @Description("Verbosity enabled?")
+      abstract boolean verbose();
+
+      @ShortName('f') @LongName("file") @Description("File name and path")
+      abstract Optional<String> file();
+   }
+
+   public Main(Arguments arguments)
+   {
+      verbose = arguments.verbose();
+      file = arguments.file().orElse("");
    }
 
    public String getFile()
@@ -43,11 +49,10 @@ public class Main
    {
       if (arguments.length < 1)
       {
-         Main_Parser.printUsage(out, 3);
+         Main_Arguments_Parser.printUsage(out, 3);
          System.exit(-1);
       }
-      final Main_Parser.Binder binder = Main_Parser.parse(arguments);
-      final Main main = binder.bind();
+      final Main main = new Main(Main_Arguments_Parser.parse(arguments));
       out.println("The file '" + main.getFile() + "' was provided and verbosity is set to '" + main.isVerbose() + "'.");
    }
 }
