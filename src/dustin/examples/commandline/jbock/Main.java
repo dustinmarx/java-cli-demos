@@ -15,8 +15,6 @@ import java.util.Optional;
  */
 public class Main
 {
-   private boolean verbose;
-   private String file;
 
    @CommandLineArguments
    abstract static class Arguments
@@ -26,33 +24,14 @@ public class Main
       abstract boolean verbose();
 
       @ShortName('f') @LongName("file") @Description("File name and path")
-      abstract Optional<String> file();
+      abstract String file();
    }
 
-   public Main(Arguments arguments)
+   public static void main(String[] arguments)
    {
-      verbose = arguments.verbose();
-      file = arguments.file().orElse("");
-   }
-
-   public String getFile()
-   {
-      return file;
-   }
-
-   public boolean isVerbose()
-   {
-      return verbose;
-   }
-
-   public static void main(final String[] arguments)
-   {
-      if (arguments.length < 1)
-      {
-         Main_Arguments_Parser.printUsage(out, 3);
-         System.exit(-1);
-      }
-      final Main main = new Main(Main_Arguments_Parser.parse(arguments));
-      out.println("The file '" + main.getFile() + "' was provided and verbosity is set to '" + main.isVerbose() + "'.");
+      Main_Arguments_Parser.parse(arguments, System.out)
+        .ifPresentOrElse(args ->
+              System.out.println("The file '" + args.file() + "' was provided and verbosity is set to '" + args.verbose() + "'."),
+              () -> System.exit(1));
    }
 }
