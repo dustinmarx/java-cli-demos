@@ -1,13 +1,9 @@
 package examples.dustin.commandline.jbock;
 
-import static java.lang.System.out;
-
 import net.jbock.CommandLineArguments;
 import net.jbock.Description;
 import net.jbock.LongName;
 import net.jbock.ShortName;
-
-import java.util.Optional;
 
 /**
  * Demonstrates use of jbock to process command-line
@@ -29,9 +25,7 @@ public class Main
 
    public static void main(String[] arguments)
    {
-      Main_Arguments_Parser.parse(arguments, System.out)
-        .ifPresentOrElse(args ->
-              System.out.println("The file '" + args.file() + "' was provided and verbosity is set to '" + args.verbose() + "'."),
-              () -> System.exit(1));
+      Arguments args = Main_Arguments_Parser.create().parseOrExit(arguments);
+      System.out.println("The file '" + args.file() + "' was provided and verbosity is set to '" + args.verbose() + "'."),
    }
 }
