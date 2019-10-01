@@ -1,9 +1,11 @@
 package examples.dustin.commandline.jbock;
 
+import static java.lang.System.out;
+
 import net.jbock.CommandLineArguments;
 import net.jbock.Parameter;
 
-import java.nio.file.Path;
+import java.util.Optional;
 
 /**
  * Demonstrates use of jbock to process command-line
@@ -19,14 +21,14 @@ public class Main
       /**
        * Verbosity enabled?
        */
-      @Parameter(flag = true, shortName = 'v', longName = "verbose")
+      @Parameter(shortName = 'v', longName = "verbose")
       abstract boolean verbose();
 
       /**
        * File name and path
        */
       @Parameter(shortName = 'f', longName = "file")
-      abstract Path file();
+      abstract String file();
    }
 
    public static void main(String[] arguments)
