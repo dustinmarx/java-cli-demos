@@ -1,9 +1,11 @@
 package examples.dustin.commandline.jbock;
 
+import static java.lang.System.out;
+
 import net.jbock.CommandLineArguments;
-import net.jbock.Description;
-import net.jbock.LongName;
-import net.jbock.ShortName;
+import net.jbock.Parameter;
+
+import java.util.Optional;
 
 /**
  * Demonstrates use of jbock to process command-line
@@ -16,16 +18,22 @@ public class Main
    abstract static class Arguments
    {
 
-      @ShortName('v') @LongName("verbose") @Description("Verbosity enabled?")
+      /**
+       * Verbosity enabled?
+       */
+      @Parameter(shortName = 'v', longName = "verbose")
       abstract boolean verbose();
 
-      @ShortName('f') @LongName("file") @Description("File name and path")
+      /**
+       * File name and path
+       */
+      @Parameter(shortName = 'f', longName = "file")
       abstract String file();
    }
 
    public static void main(String[] arguments)
    {
       Arguments args = Main_Arguments_Parser.create().parseOrExit(arguments);
-      System.out.println("The file '" + args.file() + "' was provided and verbosity is set to '" + args.verbose() + "'."),
+      System.out.println("The file '" + args.file() + "' was provided and verbosity is set to '" + args.verbose() + "'.");
    }
 }
