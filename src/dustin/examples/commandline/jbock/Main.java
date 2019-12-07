@@ -1,33 +1,29 @@
 package examples.dustin.commandline.jbock;
 
-import static java.lang.System.out;
-
-import net.jbock.CommandLineArguments;
-import net.jbock.Parameter;
-
-import java.util.Optional;
+import net.jbock.Command;
+import net.jbock.Option;
 
 /**
- * Demonstrates use of jbock to process command-line
+ * Demonstrates use of jbock 3.4 to process command-line
  * arguments in a Java application.
  */
 public class Main
 {
 
-   @CommandLineArguments
+   @Command
    abstract static class Arguments
    {
 
       /**
        * Verbosity enabled?
        */
-      @Parameter(shortName = 'v', longName = "verbose")
+      @Option(value = "verbose", mnemonic = 'v')
       abstract boolean verbose();
 
       /**
        * File name and path
        */
-      @Parameter(shortName = 'f', longName = "file")
+      @Option(value = "file", mnemonic = 'f')
       abstract String file();
    }
 
