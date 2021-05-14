@@ -1,10 +1,11 @@
 package examples.dustin.commandline.jbock;
 
+import java.util.Optional;
 import net.jbock.Command;
 import net.jbock.Option;
 
 /**
- * Demonstrates use of jbock 3.4 to process command-line
+ * Demonstrates use of jbock 4.2 to process command-line
  * arguments in a Java application.
  */
 public class Main
@@ -17,14 +18,14 @@ public class Main
       /**
        * Verbosity enabled?
        */
-      @Option(value = "verbose", mnemonic = 'v')
+      @Option(names = {"-v", "--verbose"})
       abstract boolean verbose();
 
       /**
        * File name and path
        */
-      @Option(value = "file", mnemonic = 'f')
-      abstract String file();
+      @Option(names = {"-f", "--file"})
+      abstract Optional<String> file();
    }
 
    public static void main(String[] arguments)
