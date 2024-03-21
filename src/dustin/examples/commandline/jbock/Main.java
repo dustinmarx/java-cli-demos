@@ -5,7 +5,7 @@ import net.jbock.Command;
 import net.jbock.Option;
 
 /**
- * Demonstrates use of jbock 4.2 to process command-line
+ * Demonstrates use of jbock 5.18 to process command-line
  * arguments in a Java application.
  */
 public class Main
@@ -30,7 +30,7 @@ public class Main
 
    public static void main(String[] arguments)
    {
-      Arguments args = new Main_Arguments_Parser().parseOrExit(arguments);
+      Arguments args = Main_ArgumentsParser.parseOrExit(arguments);
       System.out.println("The file '" + args.file() + "' was provided and verbosity is set to '" + args.verbose() + "'.");
    }
 }
