@@ -5,27 +5,27 @@ import net.jbock.Command;
 import net.jbock.Option;
 
 /**
- * Demonstrates use of jbock 5.18 to process command-line
+ * Demonstrates use of jbock 5.23 to process command-line
  * arguments in a Java application.
  */
 public class Main
 {
 
    @Command
-   abstract static class Arguments
+   interface Arguments
    {
 
       /**
        * Verbosity enabled?
        */
       @Option(names = {"-v", "--verbose"})
-      abstract boolean verbose();
+      boolean verbose();
 
       /**
        * File name and path
        */
       @Option(names = {"-f", "--file"})
-      abstract Optional<String> file();
+      Optional<String> file();
    }
 
    public static void main(String[] arguments)
